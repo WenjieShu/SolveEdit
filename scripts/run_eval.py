@@ -79,7 +79,7 @@ def question_payload(contract: dict[str, Any]) -> list[dict[str, Any]]:
                 "partial_criteria": item.get("partial_criteria"),
                 "fail_criteria": item.get("fail_criteria"),
                 "checker_family": item.get("checker"),
-                "evidence_required": item.get("evidence_required", []),
+                "evidence_requirements": item.get("evidence_requirements", []),
             }
         )
     return payload

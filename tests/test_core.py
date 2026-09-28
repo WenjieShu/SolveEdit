@@ -54,6 +54,23 @@ class PlannerTests(unittest.TestCase):
 
 
 class RunnerTests(unittest.TestCase):
+    def test_prompt_keeps_evidence_requirements(self):
+        from importlib.util import module_from_spec, spec_from_file_location
+
+        path = Path(__file__).resolve().parents[1] / "scripts" / "run_eval.py"
+        spec = spec_from_file_location("solveedit_run_eval", path)
+        module = module_from_spec(spec)
+        spec.loader.exec_module(module)
+        contract = {
+            "schema_version": "solveedit.atomic_contract.v3",
+            "criterion_groups": [
+                {"role": "required", "property": "semantic_accuracy", "atoms": [
+                    {"id": "r1", "evidence_requirements": ["Read the visible label"]},
+                ]},
+            ],
+        }
+        self.assertIn("Read the visible label", module.build_prompt(contract))
+
     def test_eval_dry_run_and_missing_generation(self):
         root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as temporary:
