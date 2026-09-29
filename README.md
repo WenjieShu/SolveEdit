@@ -25,7 +25,6 @@ Qi Chen<sup>1,*</sup>, Harry Yang<sup>2,*</sup>, Xiaogang Xu<sup>4</sup>**
 - [SolveEdit-Plan](#solveedit-plan)
 - [Evaluation](#evaluation)
 - [Repository Structure](#repository-structure)
-- [Release Scope](#release-scope)
 - [Citation](#citation)
 
 ## Release Status
@@ -168,10 +167,6 @@ Run the local checks:
 ```bash
 python -m unittest discover -s tests
 ```
-
-## Release Scope
-
-This repository includes planning and VLM evaluation code, plus a paper overview figure. It does not include benchmark contracts, case images, generated outputs, or private production scripts. The published evaluator omits preassigned SAM/YOLO checker calls and disagreement adjudication; its scores should not be presented as the paper's full evaluation protocol. The planner output is an instruction for an external generator, not a generated image.
 
 ## Citation
 
