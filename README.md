@@ -10,7 +10,7 @@ Qi Chen<sup>1,*</sup>, Harry Yang<sup>2,*</sup>, Xiaogang Xu<sup>4</sup>**
 
 <sup>1</sup>ZODA · <sup>2</sup>HKUST · <sup>3</sup>UCAS · <sup>4</sup>ZJU · <sup>5</sup>UTokyo
 
-[![Paper PDF](https://img.shields.io/badge/Paper-PDF-b31b1b)](https://wenjieshu.github.io/SolveEdit-project-page/static/pdfs/solveedit.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2609.35504-b31b1b)](https://arxiv.org/abs/2609.35504)
 [![Project Page](https://img.shields.io/badge/SolveEdit-Project_Page-267a48)](https://wenjieshu.github.io/SolveEdit-project-page/)
 [![Leaderboard](https://img.shields.io/badge/Results-Leaderboard-3269a8)](https://wenjieshu.github.io/SolveEdit-project-page/#leaderboard)
 
@@ -26,10 +26,11 @@ Qi Chen<sup>1,*</sup>, Harry Yang<sup>2,*</sup>, Xiaogang Xu<sup>4</sup>**
 - [Evaluation](#evaluation)
 - [Repository Structure](#repository-structure)
 - [Release Scope](#release-scope)
+- [Citation](#citation)
 
 ## Release Status
 
-- [x] Project page and paper PDF.
+- [x] Project page and arXiv paper.
 - [x] SolveEdit-Plan: Inspect, crop extraction, and Resolve.
 - [x] VLM evaluation runner and deterministic scoring core.
 - [ ] Benchmark images and atomic contracts.
@@ -171,3 +172,15 @@ python -m unittest discover -s tests
 ## Release Scope
 
 This repository includes planning and VLM evaluation code, plus a paper overview figure. It does not include benchmark contracts, case images, generated outputs, or private production scripts. The published evaluator omits preassigned SAM/YOLO checker calls and disagreement adjudication; its scores should not be presented as the paper's full evaluation protocol. The planner output is an instruction for an external generator, not a generated image.
+
+## Citation
+
+```bibtex
+@article{shu2026solveedit,
+  title={SolveEdit: Benchmarking Visual Problem Solving in Generative Models},
+  author={Shu, Wenjie and Liu, Yexin and Chen, Harold Haodong and Qiu, Xuerui and Wang, Zehan and Zhang, Yidi and Chen, Yizhan and Wang, Zunwei and Liu, Minghao and Chen, Qi and Yang, Harry and Xu, Xiaogang},
+  journal={arXiv preprint arXiv:2609.35504},
+  year={2026},
+  url={https://arxiv.org/abs/2609.35504}
+}
+```
